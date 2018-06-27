@@ -1,0 +1,23 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+  background: $body-background;
+}
+
+.button {
+  border-radius: 2.5rem 2.5rem;
+  border: none;
+  background: $header-background;
+  color: white;
+  font-size: $m-size;
+  min-height: 1em;
+  cursor: pointer;
+}
+
+.button:focus{
+  outline: 0;
+}

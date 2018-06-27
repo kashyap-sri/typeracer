@@ -1,0 +1,99 @@
+.container{
+    margin: 0 auto;
+}
+
+.header {
+    background: $header-background;
+    width: 100vw;
+    height: 10vh;
+    margin: 0 auto;
+}
+
+.header__content{
+    margin: 0 auto;
+    max-width: 120rem;
+    color: $content-color;
+    position: relative;
+    top: 1rem;
+}
+
+.header__subtitle{
+    font-size: $m-size;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.header__title{
+    font-size: $l-size;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.body__content{
+    margin: 0 auto;
+    max-width: 120rem;
+    color: $content-color;
+    height: 90vh;
+    width: 100vw;
+}
+
+.table{
+    position: absolute;
+    top: 25%;
+    font-size: $ml-size;
+}
+
+.table__content{
+    padding: $table-element-padding;
+    color: white;
+}
+
+.table__headerRow{
+    background: $header-background;
+}
+
+.searchbar {
+    position: absolute;
+    top: 20%;
+    width: 60vw;
+    height: 2rem;
+    margin: 0 auto;
+    max-width: 120rem;
+    background: none;
+    border: 0.2rem solid $header-background;
+    border-radius: 1rem;
+    -webkit-padding-start: 0.5rem;
+    color: white;
+}
+
+.searchbar:focus {
+    outline: 0;
+}
+
+.button_addUser {
+    position: absolute;
+    right: 22%;
+    top: 20%;
+}
+
+.greenDot {
+    height: 25px;
+    width: 25px;
+    background-color: #0bfa0b;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: 1.5rem;
+}
+
+.redDot {
+    height: 25px;
+    width: 25px;
+    background-color: #fa2a06;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: 1.5rem;
+}
+
+

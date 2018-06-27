@@ -1,0 +1,49 @@
+.details__header {
+    background: $header-background;
+    margin: 0 auto;
+    padding: 0;
+    width: 100vw;
+    height: 10vh;
+    position: absolute;
+    top: 0rem;
+}
+
+.details__headerContent {
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 120rem;
+    position: relative;
+    top: 2rem;
+    font-size: $l-size;
+}
+
+.details__body{
+    position: relative;
+    top: 10rem;
+}
+
+.details__bodyContent{
+    max-width: 120rem;
+    margin: 0 auto;
+    color: white;
+    padding: 0.5rem;
+    max-height: 5rem;
+}
+
+.details__bodyContent a{
+    position: relative;
+    top: 5rem;
+    font-size: $m-size;
+    color: white;
+}
+
+.details__header .greenDot, .details__header .redDot {
+    position: relative;
+    top: 0.4rem;
+} 
+
+.details__backButton{
+    text-decoration: none;
+    padding: 1rem;
+}
