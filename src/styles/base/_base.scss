@@ -12,10 +12,11 @@ body {
   border-radius: 2.5rem 2.5rem;
   border: none;
   background: $header-background;
-  color: white;
+  color: $body-background;
   font-size: $m-size;
   min-height: 1em;
   cursor: pointer;
+  color: $content-color;
 }
 
 .button:focus{

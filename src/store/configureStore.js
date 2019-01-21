@@ -1,15 +1,18 @@
-import { createStore, combineReducers } from 'redux';
-import usersReducer from '../reducers/users';
-import filtersReducer from '../reducers/filters';
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import defaultReducer from '../reducers/defaultReducer';
+
+// function fetchParagraphMid(forPerson) {
+//   return function(dispatch) {
+//     return fetchParagraph().then(
+//       sauce => dispatch(makeASandwich(forPerson, sauce)),
+//       error => dispatch(apologize('The Sandwich Shop', forPerson, error))
+//     )
+//   }
+// }
 
 export default () => {
-  const store = createStore(
-    combineReducers({
-      users: usersReducer,
-      filters: filtersReducer
-    }),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
+  const store = createStore(defaultReducer, applyMiddleware(thunk));
 
   return store;
 };

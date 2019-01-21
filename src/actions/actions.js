@@ -1,76 +1,52 @@
-// Add user
-export const addUser = (
-    {
-        firstName = '',
-        lastName = '', 
-        phone = null, 
-        email = '',
-        DOB = '',
-        active = true,
-        age = null,
-        id
+import axios from 'axios';
 
-    } = {}) => {
+export const updateInputQuery = (query) => {
     return {
-        type: 'ADD_USER',
-        user: {
-            firstName,
-            lastName,
-            phone,
-            email,
-            age,
-            DOB,
-            active,
-            id
-        }
-    };
-};
-
-export const editUser = (
-    {
-        firstName = '',
-        lastName = '', 
-        phone = null, 
-        email = '',
-        DOB = '',
-        active = true,
-        age = null,
-        id
-
-    } = {}) => {
-    return {
-        type: 'EDIT_USER',
-        user: {
-            firstName,
-            lastName,
-            phone,
-            email,
-            age,
-            DOB,
-            active,
-            id
-        }
-    };
-};
-
-export const removeUser = ( id ) => {
-    return {
-        type: 'REMOVE_USER',
-        id
-    };
-};
-
-export const activateUser = ( user ) => {
-    return {
-        type: 'ACTIVATE_USER',
-        user
-    };
-}
-
-//Apply filter
-export const applyFilter = ( query ) => {
-    return {
-        type: 'APPLY_FILTER',
+        type: 'UPDATE_INPUT_QUERY',
         query
     }
 }
+
+export const fetchParagraph = () => {
+    return (dispatch) => {
+        axios.get('http://www.randomtext.me/api/')
+        .then((response) => {
+            if(response.status === 200) {
+                dispatch({
+                    type: 'FETCH_PARAGRAPH_SUCCESS',
+                    loading: false,
+                    data: response.data['text_out'].replace('<p>', '').replace('</p>', '')
+                })
+            } else {
+                dispatch({
+                    type: 'FETCH_PARAGRAPH_FAILURE',
+                    loading: 'failure'
+                })
+            }
+        });
+    }
+};
+
+export const beginFetchParagraph = (loading) => {
+    type: 'FETCH_PARAGRAPH',
+    loading
+};
+
+export const successFetchParagraph = (dispatch, loading) => {
+    type: 'FETCH_PARAGRAPH_SUCCESS',
+    loading
+};
+
+export const failureFetchParagraph = (dispatch, loading) => {
+    type: 'FETCH_PARAGRAPH_FAILURE',
+    loading
+};
+
+export const updateValidity = (valid, queryLength) => {
+    return {
+        type: 'UPDATE_VALIDITY',
+        valid,
+        queryLength
+    };
+};
+
